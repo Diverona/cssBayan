@@ -1,0 +1,66 @@
+.container {
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.accordion {
+  font-size: 1rem;
+}
+
+.accordion-label {
+  display: block;
+  padding: 1rem;
+  background-color: #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.accordion-label:hover {
+  background-color: #ccc;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+input[type="radio"]:checked + .accordion-label {
+  background-color: #ccc;
+}
+
+.accordion-image {
+  width: 100%;
+}
+
+input[type="radio"]:checked + .accordion-label + .accordion-content {
+  max-height: 1000px; /* достаточно большое значение */
+}
+
+input[type="radio"]:checked + .accordion-label {
+  background-color: #ccc;
+}
+
+input[type="radio"]:checked + .accordion-label + .accordion-content {
+  max-height: 1000px;
+}
+
+input[type="radio"]:not(:checked) + .accordion-label {
+  background-color: #ddd;
+}
+
+input[type="radio"]:not(:checked) + .accordion-label + .accordion-content {
+  max-height: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .accordion-label {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .accordion-label {
+    font-size: 0.8rem;
+  }
+}
